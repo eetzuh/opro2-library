@@ -1,4 +1,7 @@
-package model;
+package model.client;
+
+import model.Author;
+import model.Book;
 
 public class BookAuthor {
 	private int id;
