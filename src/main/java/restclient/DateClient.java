@@ -1,5 +1,6 @@
 package restclient;
 
+import java.util.List;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import jakarta.ws.rs.GET;
@@ -18,6 +19,6 @@ public interface DateClient {
 
     @GET
     @Path("/NextPublicHolidays/{countryCode}")
-    public PublicHoliday getNextPublicHolidays(@PathParam("countryCode") String code);
+    public List<PublicHoliday> getNextPublicHolidays(@PathParam("countryCode") String code);
 
 }

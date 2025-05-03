@@ -25,7 +25,6 @@ public class LibrarianResource {
 			return Response.status(Response.Status.BAD_REQUEST)
 					.entity("Librarian data is required" + librarian).build();
 		}
-		System.out.println("Received librarian: " + librarian);
 		Librarian l = librarianRepository.createLibrarian(librarian);
 		return Response.ok().entity(l).build();
 	}
