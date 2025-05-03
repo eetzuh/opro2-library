@@ -1,6 +1,7 @@
 package model.client;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -8,6 +9,7 @@ import jakarta.persistence.ManyToOne;
 import model.Book;
 import model.Genre;
 
+@Entity
 public class BookGenre {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +20,10 @@ public class BookGenre {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Book book;
+
+	public BookGenre() {
+	}
+
 
 	public BookGenre(int id, Genre genre, Book book) {
 		super();
@@ -88,5 +94,4 @@ public class BookGenre {
 		return "BookGenre [id=" + id + ", genre=" + genre + ", book=" + book + "]";
 	}
 
-	
 }
